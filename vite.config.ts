@@ -18,7 +18,7 @@ const spa404Plugin = () => ({
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/webiste/',
+  base: '/',
   server: {
     host: "::",
     port: 8080,
