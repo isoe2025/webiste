@@ -57,7 +57,7 @@ const RegistrationSection: React.FC = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-8">
-            Ready to join ISoE 2025? Click the button below to access our Google Form and complete your registration.
+            Ready to join ISoE 2065? Click the button below to access our Google Form and complete your registration.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ const RegistrationSection: React.FC = () => {
                 <div className="w-20 h-20 mx-auto bg-gradient-to-br from-accent/20 to-primary/20 rounded-full flex items-center justify-center mb-6">
                   <Users className="h-10 w-10 text-accent animate-glow" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Join ISoE 2025</h3>
+                <h3 className="text-2xl font-bold text-primary mb-4">Join ISoE 2026</h3>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Register now to be part of this prestigious international symposium and connect with leading researchers, academicians, and industry professionals from around the world.
                 </p>

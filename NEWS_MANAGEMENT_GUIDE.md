@@ -1,4 +1,4 @@
-# News Management Guide for ISoE 2025
+# News Management Guide for 2026
 
 ## How to Add New News Items
 
@@ -44,7 +44,7 @@ const newsItems: NewsItem[] = [
   // Existing items below...
   {
     id: '1',
-    title: 'ISoE 2025 Call for Papers',
+    title: '2026 Call for Papers',
     // ... rest of the item
   },
   // ... more items

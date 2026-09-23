@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import ConferenceSection from '@/components/ConferenceSection';
 import AboutSection from '@/components/AboutSection';
@@ -10,6 +11,21 @@ import collegeLogo1 from '@/assets/college-logo-1.png';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('conference');
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.tab) {
+      setActiveTab(location.state.tab);
+    }
+    if (location.state?.sectionId) {
+      setTimeout(() => {
+        const element = document.getElementById(location.state.sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.state]);
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
@@ -51,13 +67,13 @@ const Index = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-3 gap-12">
-            {/* ISoE 2025 Section */}
+            {/* ISoE 2026 Section */}
             <div className="animate-fade-in">
               <div className="mb-6">
                 <div className="w-16 h-1 bg-accent mb-4"></div>
-                <h3 className="text-2xl font-black text-accent mb-4 tracking-wide uppercase">ISoE 2025</h3>
+                <h3 className="text-2xl font-black text-accent mb-4 tracking-wide uppercase">ISoE 2026</h3>
                 <p className="text-sm font-medium text-white/90 leading-relaxed">
-                  International Symposium on Engineering - Advances and Innovations in Engineering for a Sustainable Future
+                  International Symposium on Engineering - Integration of AI, IoT and Green Technologies for a Sustainable Future
                 </p>
               </div>
               <div className="flex items-center space-x-4">
@@ -109,6 +125,20 @@ const Index = () => {
                     >
                       <div className="w-2 h-2 bg-accent rounded-full mr-3 group-hover:scale-125 transition-transform"></div>
                       <span className="font-medium">News & Updates</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={() => {
+                        handleTabChange('conference');
+                        setTimeout(() => {
+                          document.getElementById('past-events')?.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                      }} 
+                      className="group flex items-center text-white/90 hover:text-accent transition-all duration-300 hover:translate-x-2 cursor-pointer"
+                    >
+                      <div className="w-2 h-2 bg-accent rounded-full mr-3 group-hover:scale-125 transition-transform"></div>
+                      <span className="font-medium">ISoE 2025 (Past Event)</span>
                     </button>
                   </li>
                 </ul>

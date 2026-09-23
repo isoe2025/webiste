@@ -1,10 +1,1 @@
-#ISoE 2025 website
-
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+#ISoE - JNU website

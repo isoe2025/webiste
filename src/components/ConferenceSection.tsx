@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CalendarDays, Target, DollarSign, Users, MapPin } from 'lucide-react';
+import PastEventSection from '@/components/PastEventSection';
 
 const ConferenceSection: React.FC = () => {
   // Consolidated 9 research themes (user-provided)
@@ -35,11 +36,11 @@ const ConferenceSection: React.FC = () => {
   };
 
   const timeline = [
-    { date: '15 October 2025', event: 'Abstract Submission Opens', status: getTimelineStatus('15 October 2025') },
-    { date: '5 November 2025', event: 'Abstract Submission Deadline', status: getTimelineStatus('5 November 2025') },
-    { date: '12 November 2025', event: 'Abstract Acceptance Notification', status: getTimelineStatus('12 November 2025') },
-    { date: '15 November 2025', event: 'Registration Deadline', status: getTimelineStatus('15 November 2025') },
-    { date: '21 November 2025', event: 'ISoE 2025 Symposium', status: getTimelineStatus('21 November 2025') }
+    { date: '15 October 2026', event: 'Abstract Submission Opens', status: getTimelineStatus('15 October 2026') },
+    { date: '20 October 2026', event: 'Abstract Submission Deadline', status: getTimelineStatus('20 October 2026') },
+    { date: '27 October 2026', event: 'Abstract Acceptance Notification', status: getTimelineStatus('27 October 2026') },
+    { date: '05 November 2026', event: 'Registration Deadline', status: getTimelineStatus('05 November 2026') },
+    { date: '20 November 2026', event: 'ISoE 2026 Symposium', status: getTimelineStatus('20 November 2026') }
   ];
 
   const sponsorshipTiers = [
@@ -66,10 +67,10 @@ const ConferenceSection: React.FC = () => {
       <section id="overview" className="scroll-mt-24 animate-fade-in">
         <div className="text-center">
           <h2 className="text-4xl font-bold text-primary mb-2">International Symposium on Engineering</h2>
-          <h2 className="text-4xl font-bold text-primary mb-8">(ISoE 2025)</h2>
-          <p className="text-xl text-accent font-semibold mb-2">Advances and Innovations in Engineering for a Sustainable Future</p>
+          <h2 className="text-4xl font-bold text-primary mb-8">(ISoE 2026)</h2>
+          <p className="text-xl text-accent font-semibold mb-2">Integration of AI, IoT and Green Technologies for a Sustainable Future</p>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            The International Symposium on Engineering (ISoE 2025), organized by the School of Engineering, 
+            The International Symposium on Engineering (ISoE 2026), organized by the School of Engineering, 
             Jawaharlal Nehru University (JNU), New Delhi, India, is a premier forum designed to bring together 
             academicians, researchers, industry professionals, and students from diverse engineering domains.
           </p>
@@ -105,7 +106,7 @@ const ConferenceSection: React.FC = () => {
                 <CalendarDays className="h-5 w-5 text-accent mt-1 animate-glow" />
                 <div>
                   <div className="text-xs uppercase tracking-wide text-muted-foreground">When</div>
-                  <div className="text-lg font-semibold text-primary">21<sup>st</sup> November 2025</div>
+                  <div className="text-lg font-semibold text-primary">20<sup>th</sup> November 2026</div>
                 </div>
               </div>
 
@@ -130,7 +131,7 @@ const ConferenceSection: React.FC = () => {
         <div className="text-center">
           <h2 className="text-3xl font-bold text-primary mb-4">Research Themes</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-2">
-            Abstracts on the following themes related to Advances and Innovations in Engineering for a Sustainable Future are invited
+            Abstracts on the following themes related to Integration of AI, IoT and Green Technologies for a Sustainable Future are invited
           </p>
           <p className="text-sm text-muted-foreground mb-8" style={{ fontSize: '14px', fontWeight: 'bolder' }}>(Maximum 250-300 words)</p>
         </div>
@@ -168,7 +169,7 @@ const ConferenceSection: React.FC = () => {
       <section id="timeline" className="scroll-mt-24 animate-fade-in">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-primary mb-4">Key Dates</h2>
-          <p className="text-muted-foreground mb-8">Important deadlines and milestones for ISoE 2025</p>
+          <p className="text-muted-foreground mb-8">Important deadlines and milestones for ISoE 2026</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -234,6 +235,9 @@ const ConferenceSection: React.FC = () => {
           ))}
         </div>
       </section>
+
+      {/* Past Event (ISoE 2025) Section */}
+      <PastEventSection />
     </div>
   );
 };

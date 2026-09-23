@@ -5,11 +5,11 @@ import { Button } from '@/components/ui/button';
 import soeLogo from '@/assets/soe_logo.png';
 
 interface HeaderProps {
-  activeTab: string;
-  onTabChange: (tab: string) => void;
+  activeTab?: string;
+  onTabChange?: (tab: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
+const Header: React.FC<HeaderProps> = ({ activeTab = 'conference', onTabChange }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -24,13 +24,13 @@ const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
     { id: 'overview', label: 'Overview' },
     { id: 'themes', label: 'Themes' },
     { id: 'timeline', label: 'Timeline' },
-    { id: 'sponsorship', label: 'Sponsorship' }
+    { id: 'sponsorship', label: 'Sponsorship' },
+    { id: 'past-events', label: 'ISoE 2025' }
   ];
 
   const scrollToSection = (sectionId: string) => {
     if (activeTab !== 'conference') {
-      onTabChange('conference');
-      // Wait for the tab to change before scrolling
+      if (onTabChange) onTabChange('conference');
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -44,6 +44,13 @@ const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
       }
     }
     setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleTabClick = (tabId: string) => {
+    if (onTabChange) onTabChange(tabId);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -51,13 +58,16 @@ const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-6 lg:gap-12 h-20 sm:h-24 md:h-28">
           {/* SOE Logo */}
-          <div className="flex items-center space-x-3 sm:space-x-4 md:space-x-6 flex-shrink-0">
+          <div 
+            onClick={() => handleTabClick('conference')}
+            className="flex items-center space-x-3 sm:space-x-4 md:space-x-6 flex-shrink-0 cursor-pointer"
+          >
             <img src={soeLogo} alt="School of Engineering Logo" className="h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 object-contain" />
             <div className="min-w-0">
               <h1 className="text-sm sm:text-xl md:text-2xl font-bold text-primary animate-fade-in leading-tight">
                 International Symposium on Engineering
               </h1>
-              <p className="text-xs sm:text-sm text-accent font-medium">ISoE 2025 • JNU New Delhi</p>
+              <p className="text-xs sm:text-sm text-accent font-medium">ISoE 2026 • JNU New Delhi</p>
             </div>
           </div>
 
@@ -69,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
                   <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
                     <DropdownMenuTrigger asChild>
                       <button
-                        className={`px-3 lg:px-4 py-2 rounded-lg font-medium transition-smooth flex items-center gap-1 whitespace-nowrap text-sm lg:text-base ${
+                        className={`px-3 lg:px-4 py-2 rounded-lg font-medium transition-smooth flex items-center gap-1 whitespace-nowrap text-sm lg:text-base cursor-pointer ${
                           activeTab === tab.id
                             ? 'bg-primary text-primary-foreground shadow-elegant'
                             : 'text-foreground hover:text-primary hover:bg-secondary'
@@ -80,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
                       </button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent 
-                      className="w-48 bg-card border border-border shadow-card z-50 animate-scale-in"
+                      className="w-56 bg-card border border-border shadow-card z-50 animate-scale-in"
                       align="start"
                     >
                       {conferenceSubSections.map((section) => (
@@ -96,8 +106,8 @@ const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
                   </DropdownMenu>
                 ) : (
                   <button
-                    onClick={() => onTabChange(tab.id)}
-                    className={`px-3 lg:px-4 py-2 rounded-lg font-medium transition-smooth whitespace-nowrap text-sm lg:text-base ${
+                    onClick={() => handleTabClick(tab.id)}
+                    className={`px-3 lg:px-4 py-2 rounded-lg font-medium transition-smooth whitespace-nowrap text-sm lg:text-base cursor-pointer ${
                       activeTab === tab.id
                         ? 'bg-primary text-primary-foreground shadow-elegant'
                         : 'text-foreground hover:text-primary hover:bg-secondary'
@@ -127,7 +137,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
               <div className="absolute right-0 top-full mt-2 w-64 bg-card border border-border rounded-lg shadow-lg z-50 animate-scale-in">
                 <div className="p-4">
                   <div className="pb-3 border-b border-border">
-                    <h3 className="text-lg font-bold text-primary">ISoE 2025 Menu</h3>
+                    <h3 className="text-lg font-bold text-primary">ISoE 2026 Menu</h3>
                     <p className="text-sm text-muted-foreground">Navigate through the symposium</p>
                   </div>
                   
@@ -140,38 +150,31 @@ const Header: React.FC<HeaderProps> = ({ activeTab, onTabChange }) => {
                               variant={activeTab === tab.id ? "default" : "ghost"}
                               className="w-full justify-start text-left font-medium"
                               onClick={() => {
-                                onTabChange(tab.id);
-                                setIsMobileMenuOpen(false);
+                                handleTabClick(tab.id);
                               }}
                             >
                               {tab.label}
                             </Button>
-                            {activeTab === 'conference' && (
-                              <div className="ml-3 space-y-1 mt-1">
-                                {conferenceSubSections.map((section) => (
-                                  <Button
-                                    key={section.id}
-                                    variant="ghost"
-                                    size="sm"
-                                    className="w-full justify-start text-left text-sm"
-                                    onClick={() => {
-                                      scrollToSection(section.id);
-                                      setIsMobileMenuOpen(false);
-                                    }}
-                                  >
-                                    {section.label}
-                                  </Button>
-                                ))}
-                              </div>
-                            )}
+                            <div className="ml-3 space-y-1 mt-1">
+                              {conferenceSubSections.map((section) => (
+                                <Button
+                                  key={section.id}
+                                  variant="ghost"
+                                  size="sm"
+                                  className="w-full justify-start text-left text-sm"
+                                  onClick={() => scrollToSection(section.id)}
+                                >
+                                  {section.label}
+                                </Button>
+                              ))}
+                            </div>
                           </div>
                         ) : (
                           <Button
                             variant={activeTab === tab.id ? "default" : "ghost"}
                             className="w-full justify-start text-left font-medium"
                             onClick={() => {
-                              onTabChange(tab.id);
-                              setIsMobileMenuOpen(false);
+                              handleTabClick(tab.id);
                             }}
                           >
                             {tab.label}

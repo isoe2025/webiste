@@ -22,18 +22,18 @@ const NewsSection: React.FC = () => {
   const newsItems: NewsItem[] = [
     {
       id: '1',
-      title: 'ISoE 2025 Call for Papers & Presentations',
-      date: '15 October 2025',
-      description: 'We are excited to announce that abstract submissions are now open for ISoE 2025. Submit your innovative research in engineering and sustainable technologies.',
+      title: 'ISoE 2026 Call for Papers & Presentations',
+      date: '15 October 2026',
+      description: 'We are excited to announce that abstract submissions are now open for ISoE 2026. Submit your innovative research in engineering and sustainable technologies.',
       posterUrl: '\callforpapaper.svg',
       downloadUrl: '#',
       isNew: false
     },
     {
       id: '2',
-      title: 'ISoE 2025 Brochure Released',
-      date: '10 October 2025',
-      description: 'Brochure for the ISoE 2025 is now available. Download it to explore the event highlights, keynote speakers, and session topics.',
+      title: 'ISoE 2026 Brochure Released',
+      date: '10 October 2026',
+      description: 'Brochure for the ISoE 2026 is now available. Download it to explore the event highlights, keynote speakers, and session topics.',
       posterUrl: '\callforpapaper.svg',
       downloadUrl: '#',
       isNew: false
@@ -48,7 +48,7 @@ const NewsSection: React.FC = () => {
     if (hasNewItems && !hasShownNotification) {
       toast({
         title: "New Updates Available! 🎉",
-        description: "Check out the latest news and announcements for ISoE 2025.",
+        description: "Check out the latest news and announcements for ISoE 2026.",
         duration: 5000,
       });
       setHasShownNotification(true);
@@ -72,7 +72,7 @@ const NewsSection: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary mb-4">Event Updates & News</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Stay informed with the latest announcements, updates, and important information about ISoE 2025
+            Stay informed with the latest announcements, updates, and important information about ISoE 2026
           </p>
         </div>
 
@@ -137,7 +137,7 @@ const NewsSection: React.FC = () => {
           <Card className="inline-block shadow-card">
             <CardContent className="p-6">
               <p className="text-sm text-muted-foreground">
-                <span className="font-semibold text-primary">Stay Updated:</span> Check this section regularly for the latest announcements and important updates about ISoE 2025
+                <span className="font-semibold text-primary">Stay Updated:</span> Check this section regularly for the latest announcements and important updates about ISoE 2026
               </p>
             </CardContent>
           </Card>
