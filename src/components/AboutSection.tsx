@@ -487,7 +487,7 @@ const AboutSection: React.FC = () => {
           <p className="text-muted-foreground mb-6 max-w-3xl">Student and staff volunteers supporting symposium logistics and onsite coordination.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-start">
             {[
-              'Anjali', 'A Sampath Dev', 'Jyothi Sangwan', 'Jai Ram Chandra', 'Krishna Vamsy K', 'Pradeep', 'Vignesh Thangabalan'
+              'Ann Mary Abyson', 'Ann Mary Deljo', 'Sneha Cherian', 'Sourav Kumar', 'Sarvesh'
             ].map((name, idx) => (
               <Card key={idx} className="shadow-2xl transition-all duration-500 animate-fade-in border-0 bg-gradient-to-br from-background via-secondary/10 to-background group text-center" style={{ animationDelay: `${idx * 0.03}s` }}>
                 <CardContent className="py-6">
