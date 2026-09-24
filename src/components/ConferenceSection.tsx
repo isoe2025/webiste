@@ -4,22 +4,24 @@ import { CalendarDays, Target, DollarSign, Users, MapPin } from 'lucide-react';
 import PastEventSection from '@/components/PastEventSection';
 
 const ConferenceSection: React.FC = () => {
-  // Consolidated 9 research themes (user-provided)
   const themes = [
-    'Artificial Intelligence, Machine Learning, and Data Science',
-    'Cybersecurity, Blockchain, and Privacy Engineering',
-    'Internet of Things (IoT), Edge Computing, and Smart Embedded Systems',
-    'Robotics, Mechatronics, and Autonomous Systems',
-    '5G/6G Wireless Communication and Networked Systems',
-    'VLSI Design, Microelectronics, and Smart Sensors',
-    'Computational Modeling, Digital Twins, and Simulation Technologies',
-    'Electrical Vehicles and Hydrogen as Fuel',
-    'Additive Manufacturing, Materials Engineering, and Advanced Fabrication',
-    '', // placeholder slot so the final real item shifts to column 2, row 4
-    'Energy, Sustainability, and Thermal Systems Engineering',
+    'Artificial Intelligence and Machine Learning Applications',
+    'Data Science, Big Data Analytics and Cloud Computing',
+    'Cybersecurity and Blockchain Technologies',
+    'Computational Modelling and Simulation',
+    'IoT, Edge Computing and Smart Systems',
+    'Quantum Computing',
+    'Internet of Things (IoT) and Embedded Systems',
+    'VLSI Design and Microelectronics',
+    'Wireless Communications and 5G/6G Technologies',
+    'Smart Sensors and Instrumentation',
+    'Signal Processing, Control and Automation',
+    'Robotics, Mechatronics and Autonomous Systems',
+    'Additive Manufacturing and Smart Materials',
+    'Thermal, Energy and Sustainable Systems',
+    'Mechanical Design and Advanced Manufacturing',
+    'Digital Twins, Simulation and Process Optimization',
   ];
-
-  // `themes` is the consolidated list of 9 items; we'll render them in a 3x3 grid below
 
   // Function to determine timeline status based on current date
   const getTimelineStatus = (dateString: string) => {
@@ -138,26 +140,22 @@ const ConferenceSection: React.FC = () => {
 
         <div className="max-w-5xl mx-auto">
           <Card className="shadow-card transition-smooth animate-fade-in">
-            <CardContent className="text-center py-8">
+            <CardContent className="py-8 px-6 sm:px-10">
               <div className="w-full">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start justify-center text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 items-start text-left">
                   {themes.map((topic, idx) => (
-                    <div key={idx} className="flex items-start gap-3 text-sm">
-                      {topic ? (
-                        <>
-                          <div className="w-2 h-2 bg-accent rounded-full mt-1 animate-glow" style={{ animationDelay: `${idx * 0.02}s` }}></div>
-                          <span>{topic}</span>
-                        </>
-                      ) : (
-                        // empty placeholder to occupy the grid cell but render no dot/text
-                        <div className="h-6 w-full" />
-                      )}
+                    <div 
+                      key={idx} 
+                      className={`flex items-start gap-3 text-sm ${
+                        topic.includes('Not limited') 
+                          ? 'md:col-span-2 pt-3 border-t border-border/50 text-accent font-semibold italic' 
+                          : 'text-foreground'
+                      }`}
+                    >
+                      <div className="w-2 h-2 bg-accent rounded-full mt-1.5 flex-shrink-0 animate-glow" style={{ animationDelay: `${(idx % 6) * 0.05}s` }}></div>
+                      <span>{topic}</span>
                     </div>
                   ))}
-                </div>
-                {/* Note encouraging submissions beyond listed themes */}
-                <div className="mt-10 text-sm text-muted-foreground text-center max-w-3xl mx-auto">
-                  Submissions are not restricted to the themes mentioned; innovative and related topics beyond these areas are equally encouraged.
                 </div>
               </div>
             </CardContent>

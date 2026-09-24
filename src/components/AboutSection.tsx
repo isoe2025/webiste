@@ -14,24 +14,7 @@ const AboutSection: React.FC = () => {
     return `${base}${filename}`;
   };
 
-  const patrons = [
-    {
-      name: 'Prof. Santishree Dhulipudi Pandit',
-      role: 'Vice Chancellor, JNU (Patron)',
-      image: 'vc_jnu-w9QH9FOO.jpg'
-    },
-    {
-      name: 'Prof. Brajesh Kumar Pandey',
-      role: 'Rector-I, JNU (Co-patron)',
-      image: 'rector1-D1aDtLND.jpeg'
-    },
-    {
-      name: 'Prof. Dipendra Nath Das',
-      role: 'Rector-II, JNU (Co-patron)',
-      image: 'rector2-BIsgBnBq.jpeg'
-    }
-  ];
-
+ 
   const invitedSpeakers = [
     {
       name: 'Muhaged A. Al-Antari',
@@ -80,44 +63,12 @@ const AboutSection: React.FC = () => {
       affiliation: 'University at Albany, New York, USA'
     },
     {
-      name: 'Ankit Kumar Jaiswal',
-      affiliation: 'SoE, JNU, New Delhi, India'
-    },
-    {
-      name: 'Annu Jaiswal',
-      affiliation: 'JSS University, Noida, India'
-    },
-    {
-      name: 'Anuraj Singh',
-      affiliation: 'IIITM Gwalior, India'
-    },
-    {
       name: 'Arjun Kumar',
       affiliation: "Xi'an Jiaotong-Liverpool University, China"
     },
     {
-      name: 'Balvinder Raj',
-      affiliation: 'NIT Jalandhar, India'
-    },
-    {
-      name: 'Deepak Joshi',
-      affiliation: 'IIT Delhi, India'
-    },
-    {
       name: 'Fatima Kakepoto',
       affiliation: 'Zhejiang Normal University, China'
-    },
-    {
-      name: 'G. Renuka Devi',
-      affiliation: 'JNU, New Delhi, India'
-    },
-    {
-      name: 'Jagannath Malik',
-      affiliation: 'IIT Patna, India'
-    },
-    {
-      name: 'Kavinder Singh',
-      affiliation: 'Delhi Technical University, India'
     },
     {
       name: 'Krishna Kumar',
@@ -128,20 +79,28 @@ const AboutSection: React.FC = () => {
       affiliation: 'Sejong University, South Korea'
     },
     {
-      name: 'Prerana Mukherjee',
-      affiliation: 'SoE, JNU, New Delhi, India'
-    },
-    {
-      name: 'Pushpendra Singh',
-      affiliation: 'JNU, New Delhi, India'
-    },
-    {
-      name: 'R. Prasanth',
-      affiliation: 'Pondicherry University, Puducherry, India'
-    },
-    {
       name: 'R. Sahid Aziz',
       affiliation: 'South Metropolitan TAFE, Australia'
+    },
+    {
+      name: 'Shyam Narayan Singh Yadav',
+      affiliation: 'imec, Belgium'
+    },
+    {
+      name: 'S. Purushothaman',
+      affiliation: 'ISRO, India'
+    },
+    {
+      name: 'Rohit Srivastava',
+      affiliation: 'NCPOR, Goa, India'
+    },
+    {
+      name: 'Deepak Joshi',
+      affiliation: 'IIT Delhi, India'
+    },
+    {
+      name: 'Jagannath Malik',
+      affiliation: 'IIT Patna, India'
     },
     {
       name: 'Ramesh Patel',
@@ -152,24 +111,52 @@ const AboutSection: React.FC = () => {
       affiliation: 'IIT BHU, India'
     },
     {
-      name: 'Rohit Srivastava',
-      affiliation: 'NCPOR, Goa, India'
-    },
-    {
-      name: 'Shashank Vadlamani',
-      affiliation: 'SoE, JNU, New Delhi, India'
-    },
-    {
-      name: 'Shyam Narayan Singh Yadav',
-      affiliation: 'Taiwan'
-    },
-    {
       name: 'Sukvinder Singh',
       affiliation: 'NIT Jalandhar, India'
     },
     {
-      name: 'S. Purushothaman',
-      affiliation: 'ISRO, India'
+      name: 'Balvinder Raj',
+      affiliation: 'NIT Jalandhar, India'
+    },
+    {
+      name: 'Anuraj Singh',
+      affiliation: 'IIITM Gwalior, India'
+    },
+    {
+      name: 'R. Prasanth',
+      affiliation: 'Pondicherry University, India'
+    },
+    {
+      name: 'Kavinder Singh',
+      affiliation: 'Delhi Technical University, India'
+    },
+    {
+      name: 'Annu Jaiswal',
+      affiliation: 'JSS University, Noida, India'
+    },
+    {
+      name: 'Pushpendra Singh',
+      affiliation: 'JNU, New Delhi, India'
+    },
+    {
+      name: 'G. Renuka Devi',
+      affiliation: 'JNU, New Delhi, India'
+    },
+    {
+      name: 'Krishnan Rajkumar',
+      affiliation: 'JNU, New Delhi, India'
+    },
+    {
+      name: 'Prerana Mukherjee',
+      affiliation: 'JNU, New Delhi, India'
+    },
+    {
+      name: 'Ankit Kumar Jaiswal',
+      affiliation: 'JNU, New Delhi, India'
+    },
+    {
+      name: 'Shashank Vadlamani',
+      affiliation: 'JNU, New Delhi, India'
     }
   ];
 
@@ -348,41 +335,7 @@ const AboutSection: React.FC = () => {
         </div>
       </section>
 
-      {/* Patron and Co-patrons Section */}
-      <section className="animate-fade-in">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-2">
-            Patron and Co-patrons
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-4 rounded-full"></div>
-          <p className="text-muted-foreground text-sm sm:text-base max-w-3xl mx-auto">
-            The people providing leadership and guidance to uphold the university's vision, academic excellence, and innovation.
-          </p>
-        </div>
-
-        <div className="max-w-2xl mx-auto space-y-4">
-          {patrons.map((patron, idx) => (
-            <Card key={idx} className="shadow-card border border-border/80 bg-card rounded-2xl overflow-hidden hover-scale transition-smooth">
-              <CardContent className="p-3 sm:p-4 flex items-center gap-5">
-                <img
-                  src={getPublicUrl(patron.image)}
-                  alt={patron.name}
-                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover flex-shrink-0 border border-border/80"
-                />
-                <div>
-                  <h3 className="font-bold text-primary text-base sm:text-lg">
-                    {patron.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm font-medium text-accent mt-0.5">
-                    {patron.role}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
+  
 
       {/* Invited Speakers Section */}
       <section className="animate-fade-in">
