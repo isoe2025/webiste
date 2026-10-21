@@ -40,8 +40,8 @@ const ConferenceSection: React.FC = () => {
   const timeline = [
     { date: '15 October 2026', event: 'Abstract Submission Opens', status: getTimelineStatus('15 October 2026') },
     { date: '31 October 2026', event: 'Abstract Submission Deadline', status: getTimelineStatus('31 October 2026') },
-    { date: '27 October 2026', event: 'Abstract Acceptance Notification', status: getTimelineStatus('27 October 2026') },
-    { date: '05 November 2026', event: 'Registration Deadline', status: getTimelineStatus('05 November 2026') },
+    { date: '06 November 2026', event: 'Abstract Acceptance Notification', status: getTimelineStatus('06 November 2026') },
+    { date: '10 November 2026', event: 'Registration Deadline', status: getTimelineStatus('10 November 2026') },
     { date: '20 November 2026', event: 'ISoE 2026 Symposium', status: getTimelineStatus('20 November 2026') }
   ];
 
