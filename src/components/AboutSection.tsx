@@ -15,7 +15,12 @@ const AboutSection: React.FC = () => {
   };
 
  
-  const invitedSpeakers = [
+  const invitedSpeakers: {
+    name: string;
+    designation?: string;
+    affiliation: string;
+    image?: string;
+  }[] = [
     {
       name: 'Muhaged A. Al-Antari',
       affiliation: 'Sejong University, South Korea'
@@ -31,6 +36,18 @@ const AboutSection: React.FC = () => {
     {
       name: 'Ramesh Bansal',
       affiliation: 'University of Sharjah, UAE'
+    },
+    {
+      name: 'Neha Yadav',
+      designation: 'Scientist E / Director',
+      affiliation: 'Bureau of Indian Standards (BIS), India',
+      image: 'speakers/Neha_Yadav.webp'
+    },
+    {
+      name: 'Dr. Rohit Srivastava',
+      designation: 'Scientist E',
+      affiliation: 'Arctic Exp. Logistics, NCPOR, Goa',
+      image: 'speakers/Dr_Rohit_Srivastava.webp'
     }
   ];
 
@@ -349,21 +366,32 @@ const AboutSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {invitedSpeakers.map((speaker, idx) => (
             <Card key={idx} className="shadow-card border border-border/80 bg-card rounded-2xl overflow-hidden text-center hover-scale transition-smooth flex flex-col items-center">
               <div className="w-full pt-6 pb-2 px-6 flex justify-center items-center">
                 <img
-                  src={getPublicUrl('user.png')}
+                  src={speaker.image ? getPublicUrl(speaker.image) : getPublicUrl('user.png')}
                   alt={speaker.name}
-                  className="w-28 h-28 sm:w-32 sm:h-32 object-contain opacity-75"
+                  className={`w-28 h-28 sm:w-32 sm:h-32 rounded-2xl ${
+                    speaker.image
+                      ? 'object-cover object-top border border-border/80 shadow-md'
+                      : 'object-contain opacity-75'
+                  }`}
                 />
               </div>
-              <CardContent className="p-4 pt-2 pb-6 flex-grow flex flex-col justify-end w-full">
-                <h3 className="font-bold text-primary text-sm sm:text-base">
-                  {speaker.name}
-                </h3>
-                <p className="text-xs text-muted-foreground mt-1">
+              <CardContent className="p-4 pt-2 pb-6 flex-grow flex flex-col justify-between w-full">
+                <div>
+                  <h3 className="font-bold text-primary text-sm sm:text-base">
+                    {speaker.name}
+                  </h3>
+                  {speaker.designation && (
+                    <p className="text-xs font-semibold text-accent mt-1">
+                      {speaker.designation}
+                    </p>
+                  )}
+                </div>
+                <p className="text-xs text-muted-foreground mt-2">
                   {speaker.affiliation}
                 </p>
               </CardContent>
