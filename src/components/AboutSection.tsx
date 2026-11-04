@@ -48,6 +48,11 @@ const AboutSection: React.FC = () => {
       designation: 'Scientist E',
       affiliation: 'Arctic Exp. Logistics, NCPOR, Goa',
       image: 'speakers/Dr_Rohit_Srivastava.webp'
+    },
+    {
+      name: 'Devansh Deolekar',
+      designation: 'Scientist-E / Director, LITD',
+      affiliation: 'Bureau of Indian Standards'
     }
   ];
 
