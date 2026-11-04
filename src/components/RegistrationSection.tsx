@@ -57,7 +57,7 @@ const RegistrationSection: React.FC = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-8">
-            Ready to join ISoE 2065? Click the button below to access our Google Form and complete your registration.
+            Ready to join ISoE 2026? Click the button below to access our Google Form and complete your registration.
           </p>
         </div>
 
@@ -82,9 +82,17 @@ const RegistrationSection: React.FC = () => {
                 <ExternalLink className="h-6 w-6 mr-3" />
                 Register Now
               </Button>
+              <Button
+                onClick={() => window.open('https://forms.gle/6GRmCqxmt334EE5k9', '_blank')}
+                className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 font-bold text-base sm:text-lg px-6 sm:px-12 py-4 sm:py-6 rounded-xl hover:scale-105 w-full sm:w-auto"
+                size="lg"
+              >
+                <ExternalLink className="h-6 w-6 mr-3" />
+                Payment Form
+              </Button>
               
               <p className="text-sm text-muted-foreground mt-6">
-                Registration opens in a new tab
+                Forms open in new tabs
               </p>
             </CardContent>
           </Card>
