@@ -76,7 +76,7 @@ const RegistrationSection: React.FC = () => {
               
               <Button
                 onClick={() => window.open('https://forms.gle/N4jedfMWWTvYnaC17', '_blank')}
-                className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 font-bold text-base sm:text-lg px-6 sm:px-12 py-4 sm:py-6 rounded-xl hover:scale-105 w-full sm:w-auto"
+                className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90 mb-2 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 font-bold text-base sm:text-lg px-6 sm:px-12 py-4 sm:py-6 rounded-xl hover:scale-105 w-full sm:w-auto"
                 size="lg"
               >
                 <ExternalLink className="h-6 w-6 mr-3" />
