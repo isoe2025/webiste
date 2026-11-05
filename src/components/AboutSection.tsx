@@ -53,6 +53,11 @@ const AboutSection: React.FC = () => {
       name: 'Devansh Deolekar',
       designation: 'Scientist-E / Director, LITD',
       affiliation: 'Bureau of Indian Standards'
+    },
+    {
+      name: 'Rajan Kashyap',
+      designation: 'Assistant Professor (Ramalingaswami Fellow)',
+      affiliation: 'Department of Neuroimaging & Interventional Radiology, NIMHANS, Bangalore, India'
     }
   ];
 
