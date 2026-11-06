@@ -52,7 +52,8 @@ const AboutSection: React.FC = () => {
     {
       name: 'Devansh Deolekar',
       designation: 'Scientist-E / Director, LITD',
-      affiliation: 'Bureau of Indian Standards'
+      affiliation: 'Bureau of Indian Standards',
+      image: 'speakers/devansh_deolekar.webp'
     },
     {
       name: 'Rajan Kashyap',
