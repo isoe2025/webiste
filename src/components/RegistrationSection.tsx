@@ -90,7 +90,14 @@ const RegistrationSection: React.FC = () => {
                 <ExternalLink className="h-6 w-6 mr-3" />
                 Payment Form
               </Button>
-              
+               <Button
+                onClick={() => window.open('https://docs.google.com/document/d/13XKKg_bcUYu1h_tu_hP8LIkE_NaenZER/edit?usp=sharing&ouid=116684189452693970599&rtpof=true&sd=true', '_blank')}
+                className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 font-bold text-base sm:text-lg px-6 sm:px-12 py-4 sm:py-6 rounded-xl hover:scale-105 w-full sm:w-auto"
+                size="lg"
+              >
+                <ExternalLink className="h-6 w-6 mr-3" />
+                Abstract Submission Format
+              </Button>
               <p className="text-sm text-muted-foreground mt-6">
                 Forms open in new tabs
               </p>
