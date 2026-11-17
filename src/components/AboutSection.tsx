@@ -59,6 +59,11 @@ const AboutSection: React.FC = () => {
       name: 'Rajan Kashyap',
       designation: 'Assistant Professor (Ramalingaswami Fellow)',
       affiliation: 'Department of Neuroimaging & Interventional Radiology, NIMHANS, Bangalore, India'
+    },
+    {
+      name:"Dr. Arjun Kumar",
+      designation:"Assistant Professor",
+      affiliation: "School of CHIPS"
     }
   ];
 
